@@ -9,7 +9,7 @@ parta: obj/mecs132_1a.o
 	$(CXX) $(CXXFLAGS) $^ -o $@ 
 
 obj/%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $^ -o $@
+	$(CXX) `pkg-config --libs -cflags opencv` $(CXXFLAGS) -c $^ -o $@
 
 clean:
 	rm -f obj/*.o parta
